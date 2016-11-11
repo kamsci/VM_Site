@@ -1,0 +1,11 @@
+<div class="nav">
+    <a href="/" class="btn" role="button">Home</a>
+    <a href="/files" class="btn" role="button">Files</a>
+</div>
+
+<h2>System Stats</h2>
+<div class="procfs">
+    <h4>Total Memory: <span><%= numeral(memInfo.MemTotal*1000).format('0.00b') %></span></h4>
+    <h4>Memory Free: <span><%= numeral(memInfo.MemFree*1000).format('0.00b') %></span></h4>
+    <h4>Total Memory Available: <span><%= numeral(memInfo.MemAvailable*1000).format('0.00b') %></span></h4>
+</div>

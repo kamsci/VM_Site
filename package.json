@@ -1,0 +1,26 @@
+{
+  "name": "vm_site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kamsci/VM_Site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kamsci/VM_Site/issues"
+  },
+  "homepage": "https://github.com/kamsci/VM_Site#readme",
+  "dependencies": {
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "express-ejs-layouts": "^2.2.0",
+    "numeral": "^1.5.3",
+    "procfs-stats": "^1.0.2"
+  }
+}
