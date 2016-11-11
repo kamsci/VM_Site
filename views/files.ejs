@@ -2,11 +2,3 @@
     <a href="/" class="btn" role="button">Home</a>
     <a href="/procfs" class="btn" role="button">Sytem Stats</a>
 </div>
-
-<h2>Files</h2>
-
-<ul>
-<% files.forEach(function(file) { %>
-    <li><a href="/files-tree/<%= file %>"><%= file %></a></li>
-<% }); %>
-</ul>

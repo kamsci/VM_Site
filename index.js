@@ -13,35 +13,29 @@ app.use(ejsLayouts);
 app.use(express.static(__dirname + '/public/'));
 ////////////////////////////////////////////////
 
-app.get('/', function(req, res) {
-    res.render('index');
-});
-
-app.get('/files/*', function(req, res) {
-
-    fs.readdir(path, function(err, files){
-        // if(err) { throw err; };
-
-        console.log("files: ", files);
-        res.render('files', { files: files });
-    });
-});
-
-// app.get('/files-tree/:path', function(req, res) {
-//     path += req.params.path + '/';
-//     console.log('Path: ', req.params.path);
-//     // res.redirect('files');
-//     res.send(path);
-// });
-
 app.get('/procfs', function(req, res) {
     procfs.meminfo(function(err, data) {
         // if(err) { throw err; };
 
         console.log("mem: ", data);
         res.render('procfs', { memInfo: data, numeral: numeral });
-    })
-})
+    });
+});
+
+app.get(['/', '/*'], function(req, res) {
+    var path = req.url;
+    path = path.replace(/%20/, ' ');
+    console.log("Path: ", path);
+    
+    fs.readdir(path, function(err, files){
+        // if(err) { throw err; };
+        // files.forEach(function(file) {
+
+        // })
+        console.log("files: ", files);
+        res.render('index', { files: files });
+    });
+});
 
 ////////////////////////////////////////////////
 app.listen(4000, function() {

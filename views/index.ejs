@@ -1,4 +1,11 @@
 <div class="nav">
-    <a href="/files" class="btn" role="button">Files</a>
     <a href="/procfs" class="btn" role="button">Sytem Stats</a>
 </div>
+
+<h2>Files</h2>
+
+<ul>
+<% files.forEach(function(file) { %>
+    <li><a href="/<%= file %>"><%= file %></a></li>
+<% }); %>
+</ul>
